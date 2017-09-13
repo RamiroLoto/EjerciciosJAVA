@@ -1,9 +1,12 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 package ejerciciodos;
+
+import java.util.Scanner;
 
 /**
  *
@@ -17,6 +20,14 @@ public class EjercicioDos {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        String Nombre;
+        Scanner miescanner = new Scanner (System.in);
+        System.out.println("Ingrese Nombre");
+        Nombre = miescanner.nextLine();
+        System.out.println("El nombre es "+ Nombre);
+        
+                
+       
     }
     
 }
