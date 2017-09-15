@@ -23,11 +23,14 @@ public class EjercicioCuatro {
         // TODO code application logic here
         String Nombre;
         int Edad;
+        //Recordar que 'int' se puede usar para establecer una variable del tipo palabra a definir luego.
+        //Recordar que no se usa '=' al momento de establecer las variables.
         Scanner misc = new Scanner (System.in);
         System.out.println("Por favor ingrese su nombre");
         Nombre = misc.nextLine();
         System.out.println("Por favor ingrese su edad");
         Edad = misc.nextInt();
+        //Recordar diferencia entre nextInt y nextLine.
         System.out.println("Usted se llama "+Nombre+" Y tiene "+Edad+" años de edad");
         }
     
