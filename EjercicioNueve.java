@@ -5,6 +5,8 @@
  */
 package ejercicionueve;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Rama
@@ -17,6 +19,17 @@ public class EjercicioNueve {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Scanner misc = new Scanner (System.in);
+        int Cantidad;
+        int Precio;
+        int Total;
+        System.out.println("Por favor ingrese la cantidad");
+        Cantidad = misc.nextInt();
+        System.out.println("Por favor ingrese el precio");
+        Precio = misc.nextInt();
+        Total = Cantidad * Precio;
+        System.out.println("El total a pagar es "+Total);
+                
     }
     
 }
