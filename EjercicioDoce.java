@@ -7,27 +7,28 @@ package ejerciciodoce;
 
 import java.util.Scanner;
 
+
+
 /**
  *
- * @author Rama
+ * @author alumno
  */
 public class EjercicioDoce {
 
     /**
-     * @param args the command line arguments Se ingresa el importe de un
-     * producto importado y se le debe agregar el 35 % de impuestos internos.
+     * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Scanner misc = new Scanner(System.in);
-        int Importe;
-        int Impuesto;
-        int Total;
-        System.out.println("Por favor ingrese el importe");
-        Importe = misc.nextInt();
-        Impuesto = (Importe * 35) / 100;
-        Total = Importe + Impuesto;
-        System.out.println("El importa total es " + Total);
+        Scanner misc = new Scanner (System.in);
+        String DataAux;
+        Integer Importe;
+        //Diferentes 
+        System.out.println("Ingresar el importe");
+        DataAux = misc.next();
+        Importe = Integer.parseInt(DataAux);
+
+        System.out.println("El total es " + Importe * 1.35);
 
     }
 
