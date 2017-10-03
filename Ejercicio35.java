@@ -88,7 +88,7 @@ public class Ejercicio35 {
 
         }
         if (Total > 120) {
-            Impuesto = ((Precio * Cantidad) * 0.1);
+            Impuesto = (Total * 0.1);
             System.out.println("IIBB: usted pagó " + Impuesto + " de impuestos");
         }
     }
