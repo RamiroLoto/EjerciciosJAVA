@@ -76,12 +76,7 @@ public class Ejercicio35 {
                                     } else {
                                         Total = (Precio * Cantidad);
                                         System.out.println("El total es: " + Total);
-                                    }
-                                    
-                                    if ((Precio * Cantidad) > 120) {
-                                        Total = ((Precio * Cantidad) * 1.1);
-                                        Impuesto = ((Precio * Cantidad) * 0.1);
-                                        System.out.println("El total es: " + Total + " IIBB: usted pagó " + Impuesto + " de impuestos");
+
                                     }
                                 }
                             }
@@ -90,6 +85,11 @@ public class Ejercicio35 {
 
                 }
             }
+
+        }
+        if (Total > 120) {
+            Impuesto = ((Precio * Cantidad) * 0.1);
+            System.out.println("IIBB: usted pagó " + Impuesto + " de impuestos");
         }
     }
 }
