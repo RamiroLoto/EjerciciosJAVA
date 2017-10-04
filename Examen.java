@@ -6,10 +6,9 @@
 package examen;
 
 import java.util.Scanner;
-
 /**
  *
- * @author alumno
+ * @author Rama
  */
 public class Examen {
 
@@ -18,7 +17,7 @@ public class Examen {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Integer opcion;
+         Integer opcion;
         Scanner misc = new Scanner(System.in);
         System.out.println("Qué ejercicio quiere probar?");
         String Aux = misc.next();
@@ -60,9 +59,10 @@ public class Examen {
             case 20:
                 GuiaIf.HacerEjercicio20();
                 break;
-        }
+            case 21:
+                GuiaIf.HacerEjercicio21();
+                break;
+}
     }
     
 }
-
-
