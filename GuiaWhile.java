@@ -148,7 +148,6 @@ public class GuiaWhile {
             
             contador++;
             if (contador%2==1){
-            
                 System.out.println("Es impar: "+contador);
             }
         }
