@@ -6,14 +6,12 @@
 package examen;
 
 import java.util.Scanner;
-
 /**
  *
- * @author alumno
+ * @author Rama
  */
 public class GuiaInicial {
-
-    public static void Saludar() {
+     public static void Saludar() {
         System.out.println("Hola");
     }
     //1- Se debe mostrar el siguiente mensaje “esto funciona de maravilla”.
@@ -100,7 +98,6 @@ public class GuiaInicial {
         System.out.println("Ingresar cantidad de horas trabajadas");
         Valor = misc.nextInt();
         Sueldo = (Horas * Valor) * 1.15;
-        System.out.println("El total del sueldo menos 15% de aportes es "+Sueldo);
-        
+System.out.println("El total del sueldo menos 15% de aportes es "+Sueldo);
     }
-}    
+}
