@@ -3,10 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ejercicioswhile;
+package ejemplowhile;
 
 import java.util.Scanner;
-
 /**
  *
  * @author alumno
@@ -17,13 +16,169 @@ public class EjemploWhile {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        // TODO code application logic here
         //EjemploWhile.SalidaPorLogica();
         //EjemploWhile.IteracionSinCantidad();
         //EjemploWhile.PromedioConIf();
         //EjemploWhile.PromedioConWhile();
         //EjemploWhile.PedirNumeros();
-        EjemploWhile.MostrarMenu();
+        //EjemploWhile.MostrarMenu();
+        //EjemploWhile.TomarDatos();
+        EjemploWhile.PrimosDelUnoAlCien();
     }//finaliza main
+    
+    public static void ContadoresYAcumuladores(){
+        Integer contador=0;
+        Integer acumulador=0;
+        Integer multiplicador=1;
+        Integer restador=0;
+        Integer contadorPares=0;
+        Integer divisoresDeTres=0;
+        while(contador<10){
+            contador++;
+            System.out.println("numero: "+contador);
+            acumulador+=contador;
+            restador -= contador;
+            multiplicador*=contador;
+            if(contador%2==0){
+                contadorPares++;
+            }
+            if(contador%3==0){
+                divisoresDeTres++;
+            }
+        }
+        System.out.println("la suma es :"+acumulador);
+        System.out.println("la resta es: "+restador);
+        System.out.println("la multiplicacion es: "+multiplicador);
+        System.out.println("los pares son: "+contadorPares);
+        System.out.println("los numeros multiplos de 3 son: "+divisoresDeTres);
+        
+    }
+    public static void PrimosDelUnoAlCien(){
+        Integer NumeroIngresado=1;
+        while(NumeroIngresado<101){    
+            NumeroIngresado++;
+            Integer Contador=2;
+            Integer ContadorDivisores=0;
+            while(Contador<NumeroIngresado){
+                if (NumeroIngresado%Contador==0){
+                    ContadorDivisores++;
+                    break;
+                }
+                Contador++;
+
+            }
+            if(ContadorDivisores>0){
+                //System.out.println(" no es primo");
+            }else{
+                System.out.println("Es primo el numero: "+NumeroIngresado);
+            }
+        
+        }
+    }
+    public static void NumeroPrimo (){
+        Integer NumeroIngresado=357;
+        Integer Contador=2;
+        Integer ContadorDivisores=0;
+        while(Contador<NumeroIngresado){
+            if (NumeroIngresado%Contador==0){
+                ContadorDivisores++;
+                break;
+            }
+            Contador++;
+            
+        }
+        if(ContadorDivisores>0){
+            System.out.println(" no es primo");
+        }else{
+            System.out.println(" es primo");
+        }
+    }
+    
+    /**
+     * Pide los datos de una persona y valida cada uno.
+     * datos a pedir:
+     * Nombre
+     * Edad(entre 1 y 100)
+     * sexo(f o m)
+     * estado civil (S - C - D - V)
+     * nacionalidad (N,L,E,R)
+     * sueldo (entre 8000 y 58000)
+     * Dona organos (Si o no)
+     * clave de no menos de 6 caracteres
+     */
+    public static void TomarDatos(){
+        Scanner misc = new Scanner(System.in);
+        String Aux, Nombre, Sexo, EstadoCivil, Nacionalidad,Donador,Clave;
+        Integer Edad=0, Sueldo;
+        
+        System.out.println("Ingrese nombre");
+        Nombre = misc.next();
+        
+        System.out.println("Ingrese edad");
+        Aux = misc.next();
+        Edad = Integer.parseInt(Aux);
+        
+        while (Edad<1||Edad>100){
+        System.out.println("Ingrese edad");
+        Aux = misc.next();
+        Edad = Integer.parseInt(Aux);
+        }
+        
+        System.out.println("Ingrese sexo");
+        Sexo = misc.next();
+        
+        while(!Sexo.equals("F")&&!Sexo.equals("M")){
+        System.out.println("Ingrese sexo");
+        Sexo = misc.next();
+        }
+        
+        System.out.println("Ingrese Estado Civil");
+        EstadoCivil = misc.next();
+        
+        while(!EstadoCivil.equals("S")&&!EstadoCivil.equals("C")
+           &&!EstadoCivil.equals("D")&&!EstadoCivil.equals("V")){
+        
+        System.out.println("Ingrese Estado Civil");
+        EstadoCivil = misc.next();
+        }
+        
+        System.out.println("Ingrese Nacionalidad");
+        Nacionalidad = misc.next();
+        
+        while(!Nacionalidad.equals("N")&&!Nacionalidad.equals("L")
+           &&!Nacionalidad.equals("E")&&!Nacionalidad.equals("R")){
+        
+        System.out.println("Ingrese Nacionalidad");
+        Nacionalidad = misc.next();
+        }
+        
+        System.out.println("Ingrese sueldo");
+        Aux = misc.next();
+        Sueldo = Integer.parseInt(Aux);
+        
+        while (Sueldo<8000||Sueldo>58000){
+        System.out.println("Ingrese sueldo");
+        Aux = misc.next();
+        Sueldo = Integer.parseInt(Aux);
+        }
+        
+        System.out.println("Ingrese si es donador");
+        Donador = misc.next();
+        
+        while(!Donador.equals("Si")&&!Donador.equals("No")){
+        System.out.println("Ingrese si es donador");
+        Donador = misc.next();
+        }
+        
+        System.out.println("Ingrese clave");
+        Clave = misc.next();
+        
+        while(Clave.length()<6){
+            
+        }
+        
+    }
    
     /**
     * pide dos numeros e informa el promedio 
@@ -235,4 +390,5 @@ public class EjemploWhile {
         Resultado = numeroUno / numeroDos;
         System.out.println("El resultado de la división es: "+Resultado);
     }
+    
 }
