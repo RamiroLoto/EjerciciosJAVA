@@ -293,7 +293,13 @@ public class FuncionesParaFor {
             System.out.println("");
         }
     }
-    
+    /**
+     * 1
+     * 12
+     * 123
+     * 1234
+     * 12345
+     */
     public static void MostrarNumeros(){
         for (int contador = 1; contador < 6; contador++) {
             for (int contadorDos = 5; contadorDos > contador ; contadorDos--) {
