@@ -313,4 +313,86 @@ public class FuncionesParaFor {
             }
         }
     }
+    
+    public static void CantidadDigitos(){
+        int numero=5555;
+        int digitos=0;
+        for (int contador = 0; numero > 0; contador++) {
+            numero=numero/10;
+            digitos++;
+        }
+        System.out.println("La cantidad de digitos es "+digitos);
+    }
+    
+    public static void NumeroPalindromo(){
+        int numeroReverso;
+        int numero=3553;
+        int numAux=numero;
+        String numeroEnLetras="";
+        int NumeroActual;
+        for (int contador = 0; numAux > 0; contador++) {
+            NumeroActual=numAux%10;
+            numAux/=10;
+            numeroEnLetras+=NumeroActual;
+        }
+        
+        numeroReverso=Integer.parseInt(numeroEnLetras);
+        if(numero==numeroReverso){
+            System.out.println("Es palindromo");
+        } else {
+            System.out.println("No es palindromo");
+        }
+        
+    }
+    
+    public static void MostrarTablaDeMultiplicar2(){
+        Scanner misc = new Scanner(System.in);
+        int numIngresado;
+        String Aux;
+        
+        System.out.println("Ingrese un numero para ver su tabla de multiplicar");
+        Aux = misc.next();
+        int Resultado;
+        numIngresado = Integer.parseInt(Aux);
+        
+        for (int contador = 1; contador < 11; contador++) {
+            Resultado = numIngresado*contador;
+            System.out.println(numIngresado+" X "+contador+" = "+Resultado);
+        }
+    }
+    
+    public static void PatronDeLetras(){
+        for (int contador = 65; contador < 91; contador++) {
+            
+            for (int contadorDos = 65; contadorDos <= contador; contadorDos++) {
+                char letracasteada=((char)contadorDos);
+                switch(letracasteada){
+                    case'A':
+                        System.out.print(1);
+                        break;
+                    case'E':
+                        System.out.print(2);
+                        break;
+                    case'I':
+                        System.out.print(3);
+                        break;
+                    case'O':
+                        System.out.print(4);
+                        break;
+                    case'U':
+                        System.out.print(5);
+                        break;
+                    default:    
+                    System.out.print((char)contadorDos);}
+            }
+            
+            System.out.println();
+        }
+    }
+    
+    public static void MostrarCaracteresAscii(){
+        for (int Contador = 0; Contador < 150; Contador++) {
+            System.out.println(Contador+" = "+(char)Contador);
+        }
+    }
 }
