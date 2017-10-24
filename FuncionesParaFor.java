@@ -116,19 +116,25 @@ public class FuncionesParaFor {
     }
 
     public static void MostrarNumerosPrimosDelUnoAlCien() {
-        Integer numero = 100;
-        int contador;
-        boolean bandera = true;
-        for (contador = 2; contador < numero; contador++) {
+        Integer numeroIngresado = 2;
+        while (numeroIngresado < 100) {
 
-            if (numero % contador == 0) {
-                bandera = false;
+            Integer contadorDivisores = 0;
 
-            } else {
-                System.out.println(contador);
+            for (Integer contador = 2; contador < numeroIngresado; contador++) {
+                if (numeroIngresado % contador == 0) {
+                    contadorDivisores++;
+                    break;
+                }
+
             }
+            if (contadorDivisores > 0) {
+                //System.out.println("No es primo");
+            } else {
+                System.out.println("Es primo el número :" + numeroIngresado);
+            }
+            numeroIngresado++;
         }
-
     }
 
     public static void CentroNumerico() {
