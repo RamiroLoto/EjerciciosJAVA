@@ -9,145 +9,191 @@ import java.util.Scanner;
 
 /**
  *
- * @author alumno
+ * @author Rama
  */
 public class EjemploArraysV2 {
-    public static int cantidad=3;
+
+    public static int cantidad = 3;
+
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
-//        String ArrayNombres[] = new String[cantidad];
-//        int ArrayNotas[] = new int[cantidad];
-//        String Aux;
-//        EjemploArraysV2.CargarDatos(cantidad);
-        
 
-        String[] alumno ={"maria","manuel","diego","estela"};
-        int[] notas={10,2,5,2,7};
-        int aprobados;
-        int promedio;
-//        aprobados = RetornarCantidadAprobados(notas);
-//        promedio = RetornarPromedio(notas);
-//        System.out.println(promedio);
-        RetornarElNombreDeLaMejorNota(notas, args);
+        //EjemploArraysV2.CargarDato(cantidad);
+        //EjemploArraysV2.MostrarNombres(nombres);
+        //EjemploArraysV2.MostrarPromedio(notas);
+//        int NumeroDelMain=0;
+//        NumeroDelMain=EjemploArraysV2.DameUnNumero();
+//        EjemploArraysV2.MostrarNumero(NumeroDelMain);
+        //EjemploArraysV2.MostarRandom();
+        //declaramos un array del tipo string llamado alumno y harcodeamos nombres.
+        String[] alumno = {"maria", "manuel", "diego", "estela", "martin"};
+        //declaramos un array de enteros llamado notas y le harcodeamos notas.
+        int[] notas = {10, 2, 5, 2, 7};
+
+        //en el aux asigna el valor que retorna el metodo "retornarCantidadDeAprobados".
+        int aux = EjemploArraysV2.retornarCantidadDeAprobados(notas);
+        System.out.println("los aprobados son: " + aux);
+        //en promedio asigna el valor que retorna el metodo "retornarPromedio".
+        int promedio = EjemploArraysV2.retornarPromedio(notas);
+        System.out.println("el promedio es: " + promedio);
+        String laMejorr = EjemploArraysV2.retornarElNombreDeLaMejorNota(notas, alumno);
+
+        System.out.println("la mejor es: " + laMejorr);
     }
-    
-    public static int RetornarCantidadAprobados(int [] miparametro){
+
+    public static String retornarElNombreDeLaMejorNota(int[] notas, String[] nombres) {
+        String laMejor = "";
+        int mejor = 0;
+        for (int i = 0; i < notas.length; i++) {
+            if (i == 0) {
+                mejor = notas[i];
+                laMejor = nombres[i];
+            } else if (i < notas.length) {
+                if (mejor < notas[i]) {
+                    mejor = notas[i];
+                    laMejor = nombres[i];
+                }
+
+            }
+
+        }
+
+        return laMejor;
+    }
+
+    //declaramos un metodo que devuelve un valor. en este caso un entero. Le pasamos un parametro de array del tipo entero.
+    public static int retornarPromedio(int[] miparametro) {
+        int promedio = 0;
+        int suma = 0;
+        //for de 0 hasta la cantidad del array.
+        for (int i = 0; i < miparametro.length; i++) {
+            suma = suma + miparametro[i];
+        }
+        //el promedio es la suma dividido la cantidad del array.
+        promedio = suma / miparametro.length;
+        return promedio;
+    }
+
+    //declaramos un metodo que devuelve un entero, y le pasamos un parametro de array del tipo entero.
+    public static int retornarCantidadDeAprobados(int[] miparametro) {
         int resultado = 0;
-        for (int i = 0; i <miparametro.length; i++) {
-            if(miparametro[i]>3){
+        //for de 0 a la cantidad del parametro que le enviamos.
+        for (int i = 0; i < miparametro.length; i++) {
+            if (miparametro[i] > 3) {
                 resultado++;
             }
         }
-        
         return resultado;
     }
-    
-    public static int RetornarPromedio(int [] miparametro){
-        int promedio;
-        int suma=0;
-        for (int i = 0; i < miparametro.length; i++) {
-            suma += miparametro[i];
-        }
-        promedio=suma/miparametro.length;
-        return promedio;
-    }
-    
-    public static String RetornarElNombreDeLaMejorNota(int [] notas, String [] nombres){
-        String retorno="";
-        int Mayor=0;
-        for (int i = 0; i < notas.length; i++) {
-            if(i==0){
-                Mayor=notas[i];
-                retorno=nombres[i];
-            } else if (i<notas.length){
-                if (notas[i]>Mayor){
-                    notas[i]=Mayor;
-                    retorno=nombres[i];
 
-                }
-            }
-        }
-        return retorno;
-    }
-    
-    public static void MostrarNombres(String[] ListaPalabras){
-        for (int i = 0; i < ListaPalabras.length; i++) {
-            System.out.println("La palabra es: "+ListaPalabras[i]);
-        }
-    }
-    
-    public static void MostrarPromedio(int[] ListaNumeros){
-        int promedio;
-        int suma=0;
-        for (int i = 0; i < ListaNumeros.length; i++) {
-            suma += ListaNumeros[i];
-        }
-        promedio=suma/ListaNumeros.length;
-        System.out.println("Y el promedio es: " + promedio);
+    //retorna algo, un enetero o string.
+    public static int DameUnNumero() {
+        int numeroRandom = 44;
+
+        return numeroRandom;
     }
 
-    public static String[] CargarDatos(int cantidad) {
-        String ArrayNombres[] = new String[cantidad];
-        int ArrayNotas[] = new int[cantidad];
-        String Aux;
+    //recibe un parametro y lo utiliza.
+    public static void MostrarNumero(int algo) {
+
+        System.out.println("numero" + algo);
+    }
+
+    //crea una variable y le asigna el valor del proceso "DameUnNumero" despues se lo envia al otro proceso mostrarNumero como parametro.
+    public static void MostarRandom() {
+        int miRandom = EjemploArraysV2.DameUnNumero();
+        EjemploArraysV2.MostrarNumero(miRandom);
+
+    }
+
+    public static void MostrarPromedio(int[] ListadoDeNumeros) {
+        int suma = 0;
+        for (int i = 0; i < ListadoDeNumeros.length; i++) {
+            suma = suma + ListadoDeNumeros[i];
+        }
+        int promedio = 0;
+        promedio = suma / ListadoDeNumeros.length;
+        System.out.println("el promedio es: " + promedio);
+    }
+
+    public static void CargarDato(int cantidad) {
+        Scanner miscan = new Scanner(System.in);
+        //array de nombres
+        //array de notas
+        //pedir tres notas y tres nombres.
+        //motras los dos array
+        //saco el promedio
+
+        String[] nombres = new String[cantidad];
+        int[] notas = new int[cantidad];
+        String datoAux;
+        int CantidadDeNotas = notas.length;
+        float promedio = 0;
+        int suma = 0;
+        int contador = 0;
 
         for (int i = 0; i < cantidad; i++) {
-            Scanner misc = new Scanner(System.in);
-            System.out.println("Ingrese nombre");
-            ArrayNombres[i] = misc.next();
-            System.out.println("Ingrese la nota");
-            Aux = misc.next();
-            ArrayNotas[i] = Integer.parseInt(Aux);}
-        return ArrayNombres;
-    }
-    
-    public static void MostrarDatos(int[] ArrayNotas, String[] ArrayNombres){
-        for (int i = 0; i < cantidad; i++) {
-            System.out.println("Nombre es: "+ArrayNombres[i]);
+            contador = contador + 1;
+            System.out.println("Ingrese nombre numero: " + contador);
+            nombres[i] = miscan.next();
+            System.out.println("Ingrese nota numero: " + contador);
+            datoAux = miscan.next();
+            notas[i] = Integer.parseInt(datoAux);
+
         }
-        
-        for (int i = 0; i < cantidad; i++) {
-            System.out.println("Nota es: "+ArrayNotas[i]);
+        EjemploArraysV2.MostrarNombres(nombres, notas);
+
+    }
+
+    //le paso el parametro "nombre" que es un array de string y el mostrar nombres lo muestra
+    public static void MostrarNombres(String[] ListadoDePalabras, int[] ListadoDeNotas) {   //listadodepalabras.length para hacerlo hasta el largo del listado.
+        for (int i = 0; i < ListadoDePalabras.length; i++) {
+            System.out.println("Nombre: " + ListadoDePalabras[i]);
+            System.out.println("Nota: " + ListadoDeNotas[i]);
         }
     }
 
     public static void CargarDatos() {
-        // array de nombres. 
-        // array de notas.
-        // pedir 3 notas y 3 nombres. 
-        // mostrar los dos arrays.
-        // saco el promedio.
-        Scanner misc = new Scanner(System.in);
-        String ArrayNombres[] = new String[3];
-        int ArrayNotas[] = new int[3];
-        String Aux;
+        Scanner miscan = new Scanner(System.in);
+        //array de nombres
+        //array de notas
+        //pedir tres notas y tres nombres.
+        //motras los dos array
+        //saco el promedio
 
-        for (int i = 0; i < ArrayNombres.length; i++) {
-            System.out.println("Ingrese nombre");
-            ArrayNombres[i] = misc.next();
-            System.out.println("Ingrese la nota");
-            Aux = misc.next();
-            ArrayNotas[i] = Integer.parseInt(Aux);
+        String[] nombres = new String[3];
+        Integer[] notas = new Integer[3];
+        String datoAux;
+        int CantidadDeNotas = notas.length;
+        float promedio = 0;
+        int suma = 0;
+        int contador = 0;
+
+        for (int i = 0; i < 3; i++) {
+            contador = contador + 1;
+            System.out.println("Ingrese nombre numero: " + contador);
+            nombres[i] = miscan.next();
+            System.out.println("Ingrese nota numero: " + contador);
+            datoAux = miscan.next();
+            notas[i] = Integer.parseInt(datoAux);
 
         }
-
-        for (int i = 0; i < ArrayNombres.length; i++) {
-            System.out.print(" " + ArrayNombres[i] + " ");
-            System.out.print(" " + ArrayNotas[i] + " ");
+        contador = 0;
+        for (int i = 0; i < 3; i++) {
+            contador = contador + 1;
+            System.out.println("Nombre numero: " + contador + " = " + nombres[i]);
+            System.out.println("Nota numero: " + contador + " = " + notas[i]);
         }
 
-        int Suma=0;
-        int Promedio;
-        for (int i = 0; i < ArrayNombres.length; i++) {
-
-            Suma += ArrayNotas[i];
+        for (int i = 0; i < 3; i++) {
+            suma = suma + notas[i];
         }
-
-        Promedio = Suma / ArrayNotas.length;
-        System.out.println("Y el promedio es: " + Promedio);
+        promedio = suma / CantidadDeNotas;
+        System.out.println("el promedio es: " + promedio);
 
     }
+
 }
