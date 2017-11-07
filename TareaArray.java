@@ -18,7 +18,6 @@ public class TareaArray {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        SumaEntreDosArrays();
     }
 
     public static void GuardarPares() {
@@ -115,155 +114,229 @@ public class TareaArray {
 
             for (int k = 0; k < ArrayUno.length; k++) {
                 if (MaximoDeUno > MaximoDeDos) {
-                    System.out.print(" "+MaximoDeUno+" ");
+                    System.out.print(" " + MaximoDeUno + " ");
                     break;
                 } else {
-                    System.out.print(" "+MaximoDeDos+" ");
+                    System.out.print(" " + MaximoDeDos + " ");
                     break;
                 }
             }
         }
     }
-    
-    public static void ValorMaximoDeArray(){
+
+    public static void ValorMaximoDeArray() {
         Random rnd = new Random();
-        int Array [] = new int [10];
-        int Maximo=0;
-        
+        int Array[] = new int[10];
+        int Maximo = 0;
+
         for (int i = 0; i < Array.length; i++) {
             int Random = rnd.nextInt(100) + 1;
-            Array[i]=Random;
-            if (i==0){
-                Maximo=Array[i];
-            } else if (i<Array.length){
-                if (Maximo<Array[i]){
-                    Maximo=Array[i];
+            Array[i] = Random;
+            if (i == 0) {
+                Maximo = Array[i];
+            } else if (i < Array.length) {
+                if (Maximo < Array[i]) {
+                    Maximo = Array[i];
                 }
             }
-            System.out.print(" "+ Array[i]+" ");
+            System.out.print(" " + Array[i] + " ");
         }
         System.out.println("");
-        System.out.println("El maximo es: "+Maximo);
+        System.out.println("El maximo es: " + Maximo);
     }
-    
-    public static void ValorMaximoYMinimoDeArray(){
+
+    public static void ValorMaximoYMinimoDeArray() {
         Random rnd = new Random();
-        int Array [] = new int [10];
-        int Maximo=0;
-        int Minimo=0;
-        
+        int Array[] = new int[10];
+        int Maximo = 0;
+        int Minimo = 0;
+
         for (int i = 0; i < Array.length; i++) {
             int Random = rnd.nextInt(100) + 1;
-            Array[i]=Random;
-            if (i==0){
-                Maximo=Array[i];
-                Minimo=Array[i];
-            } else if (i<Array.length){
-                if (Maximo<Array[i]){
-                    Maximo=Array[i];
-                } else if (Minimo>Array[i]){
-                    Minimo=Array[i];
+            Array[i] = Random;
+            if (i == 0) {
+                Maximo = Array[i];
+                Minimo = Array[i];
+            } else if (i < Array.length) {
+                if (Maximo < Array[i]) {
+                    Maximo = Array[i];
+                } else if (Minimo > Array[i]) {
+                    Minimo = Array[i];
                 }
             }
-            System.out.print(" "+ Array[i]+" ");
+            System.out.print(" " + Array[i] + " ");
         }
         System.out.println("");
-        System.out.println("El Maximo es: "+Maximo);
-        System.out.println("El Minimo es: "+Minimo);
+        System.out.println("El Maximo es: " + Maximo);
+        System.out.println("El Minimo es: " + Minimo);
     }
-    
-     public static void NotMasAltaYMasBaja(){
+
+    public static void NotMasAltaYMasBaja() {
         Random rnd = new Random();
-        int Array [] = new int [10];
-        int Maximo=0;
-        int Minimo=0;
-        
+        int Array[] = new int[10];
+        int Maximo = 0;
+        int Minimo = 0;
+
         for (int i = 0; i < Array.length; i++) {
             int Random = rnd.nextInt(10) + 1;
-            Array[i]=Random;
-            if (i==0){
-                Maximo=Array[i];
-                Minimo=Array[i];
-            } else if (i<Array.length){
-                if (Maximo<Array[i]){
-                    Maximo=Array[i];
-                } else if (Minimo>Array[i]){
-                    Minimo=Array[i];
+            Array[i] = Random;
+            if (i == 0) {
+                Maximo = Array[i];
+                Minimo = Array[i];
+            } else if (i < Array.length) {
+                if (Maximo < Array[i]) {
+                    Maximo = Array[i];
+                } else if (Minimo > Array[i]) {
+                    Minimo = Array[i];
                 }
             }
-            System.out.print(" "+ Array[i]+" ");
+            System.out.print(" " + Array[i] + " ");
         }
         System.out.println("");
-        System.out.println("La nota mas alta es: "+Maximo);
-        System.out.println("La nota mas baja es: "+Minimo);
+        System.out.println("La nota mas alta es: " + Maximo);
+        System.out.println("La nota mas baja es: " + Minimo);
     }
-    
-     public static void PromedioDeNotas(){
-         Random rnd = new Random();
-         int Array [] = new int [10];
-         int suma=0;
-         for (int i = 0; i < Array.length; i++) {
-             Array[i] = rnd.nextInt(10)+1;
-             suma += Array[i];
-         }
-         int promedio= suma/Array.length;
-         System.out.println("El promedio es: "+promedio);
-     }
-     
-     public static void CantidadDeAprobados(){
-         Random rnd = new Random();
-         int Array [] = new int [10];
-         int CantAprobados=0;
-         int CantDesaprobados=0;
-         for (int i = 0; i < Array.length; i++) {
-             Array[i] = rnd.nextInt(10)+1;
-             if (Array[i]>=4){
-                 CantAprobados++;
-             } else {
-                 CantDesaprobados++;
-             }
-         }
-         
-         System.out.println("La cantidad de aprobados es: "+CantAprobados);
-         System.out.println("La cantidad de desaprobados es: "+CantDesaprobados);
-     }
-     
-     public static void PorcentajeDeAprobadosYDesaprobados(){
-         Random rnd = new Random();
-         int Array [] = new int [10];
-         int CantAprobados=0;
-         int CantDesaprobados=0;
-         for (int i = 0; i < Array.length; i++) {
-             Array[i] = rnd.nextInt(10)+1;
-             if (Array[i]>=4){
-                 CantAprobados++;
-             } else {
-                 CantDesaprobados++;
-             }
-         }
-         
-         System.out.println("El porcentaje de aprobados es: "+CantAprobados*10+"%");
-         System.out.println("El porcentaje de desaprobados es: "+CantDesaprobados*10+"%");
-     }
-     
-     public static void SumaEntreDosArrays(){
-     int ArrayUno [] = new int [20];
-     int ArrayDos [] = new int [20];
-     int ArrayResultado [] = new int [20];
-     Random rnd = new Random();
-     
-         for (int i = 0; i < ArrayUno.length; i++) {
-             ArrayUno[i]=rnd.nextInt(41)-20;
-             ArrayDos[i]=rnd.nextInt(41)-20;
-             ArrayResultado[i]=ArrayUno[i]+ArrayDos[i];
-             System.out.println(ArrayUno[i]);
-             System.out.println(ArrayDos[i]);
-             System.out.println("La suma es: "+ArrayResultado[i]);
-         }
-     }
-     
-     public static void NumeroMasCercanoACero(){
-     
-         
-     }
+
+    public static void PromedioDeNotas() {
+        Random rnd = new Random();
+        int Array[] = new int[10];
+        int suma = 0;
+        for (int i = 0; i < Array.length; i++) {
+            Array[i] = rnd.nextInt(10) + 1;
+            suma += Array[i];
+        }
+        int promedio = suma / Array.length;
+        System.out.println("El promedio es: " + promedio);
+    }
+
+    public static void CantidadDeAprobados() {
+        Random rnd = new Random();
+        int Array[] = new int[10];
+        int CantAprobados = 0;
+        int CantDesaprobados = 0;
+        for (int i = 0; i < Array.length; i++) {
+            Array[i] = rnd.nextInt(10) + 1;
+            if (Array[i] >= 4) {
+                CantAprobados++;
+            } else {
+                CantDesaprobados++;
+            }
+        }
+
+        System.out.println("La cantidad de aprobados es: " + CantAprobados);
+        System.out.println("La cantidad de desaprobados es: " + CantDesaprobados);
+    }
+
+    public static void PorcentajeDeAprobadosYDesaprobados() {
+        Random rnd = new Random();
+        int Array[] = new int[10];
+        int CantAprobados = 0;
+        int CantDesaprobados = 0;
+        for (int i = 0; i < Array.length; i++) {
+            Array[i] = rnd.nextInt(10) + 1;
+            if (Array[i] >= 4) {
+                CantAprobados++;
+            } else {
+                CantDesaprobados++;
+            }
+        }
+
+        System.out.println("El porcentaje de aprobados es: " + CantAprobados * 10 + "%");
+        System.out.println("El porcentaje de desaprobados es: " + CantDesaprobados * 10 + "%");
+    }
+
+    public static void SumaEntreDosArrays() {
+        int ArrayUno[] = new int[20];
+        int ArrayDos[] = new int[20];
+        int ArrayResultado[] = new int[20];
+        Random rnd = new Random();
+
+        for (int i = 0; i < ArrayUno.length; i++) {
+            ArrayUno[i] = rnd.nextInt(41) - 20;
+            ArrayDos[i] = rnd.nextInt(41) - 20;
+            ArrayResultado[i] = ArrayUno[i] + ArrayDos[i];
+            System.out.println(ArrayUno[i]);
+            System.out.println(ArrayDos[i]);
+            System.out.println("La suma es: " + ArrayResultado[i]);
+        }
+    }
+
+    public static void NumeroMasCercanoACero() {
+        int ArrayUno[] = new int[20];
+        int ArrayDos[] = new int[20];
+        int ArrayResultado[] = new int[20];
+        int difArrayUno = 0;
+        int difArrayDos = 0;
+        Random rnd = new Random();
+
+        for (int i = 0; i < ArrayUno.length; i++) {
+            ArrayUno[i] = rnd.nextInt(41) - 20;
+            ArrayDos[i] = rnd.nextInt(41) - 20;
+        }
+
+        for (int i = 0; i < ArrayResultado.length; i++) {
+            difArrayUno = 20 - Math.abs(ArrayUno[i]);
+            difArrayDos = 20 - Math.abs(ArrayDos[i]);
+            if (difArrayUno > difArrayDos) {
+                ArrayResultado[i] = ArrayUno[i];
+            } else {
+                ArrayResultado[i] = ArrayDos[i];
+            }
+        }
+
+        for (int i = 0; i < ArrayResultado.length; i++) {
+            System.out.print(" " + ArrayResultado[i] + " ");
+        }
+    }
+
+    public static void NumeroSumaOMultiplicacion() {
+        int ArrayUno[] = new int[20];
+        int ArrayDos[] = new int[20];
+        int ArrayResultado[] = new int[20];
+        Random rnd = new Random();
+
+        for (int i = 0; i < ArrayUno.length; i++) {
+            ArrayUno[i] = rnd.nextInt(41) - 20;
+            ArrayDos[i] = rnd.nextInt(41) - 20;
+        }
+
+        for (int i = 0; i < ArrayResultado.length; i++) {
+            if (ArrayUno[i] > ArrayDos[i]) {
+                ArrayResultado[i] = ArrayUno[i] + ArrayDos[i];
+            } else {
+                ArrayResultado[i] = ArrayDos[i] * ArrayDos[i];
+            }
+        }
+
+        for (int i = 0; i < ArrayResultado.length; i++) {
+            System.out.print(" " + ArrayResultado[i] + " ");
+        }
+    }
+
+    public static void NumerosSumarSiSonPositivos() {
+        int ArrayUno[] = new int[20];
+        int ArrayDos[] = new int[20];
+        int ArrayResultado[] = new int[20];
+        Random rnd = new Random();
+
+        for (int i = 0; i < ArrayUno.length; i++) {
+            ArrayUno[i] = rnd.nextInt(41) - 20;
+            ArrayDos[i] = rnd.nextInt(41) - 20;
+        }
+
+        for (int i = 0; i < ArrayResultado.length; i++) {
+            if (ArrayUno[i] > 0 && ArrayDos[i] > 0) {
+                ArrayResultado[i] = ArrayUno[i] + ArrayDos[i];
+            } else if (ArrayUno[i] < 0 && ArrayDos[i] < 0) {
+                ArrayResultado[i] = ArrayDos[i] / ArrayDos[i];
+            } else {
+                ArrayResultado[i] = ArrayUno[i] - ArrayDos[i];
+            }
+        }
+
+        for (int i = 0; i < ArrayResultado.length; i++) {
+            System.out.print(" " + ArrayResultado[i] + " ");
+        }
+    }
+
 }
