@@ -37,7 +37,8 @@ public class Auto {
         this.elPiloto = new Piloto();
         this.modelo = "Ford";
         this.numero = numero;
-        this.escuderia = new Escuderia(1930, "Italia", "ferrari");
+        //this.escuderia = new Escuderia(1930, "Italia", "ferrari");
+        //this.CargarEscuderia(); cargar escuderias random.
         this.CargarPilotoRandom();
     }
 
