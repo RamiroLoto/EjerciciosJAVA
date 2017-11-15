@@ -1,0 +1,62 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package ejemplofacturacion;
+
+/**
+ *
+ * @author alumno
+ */
+public class EjemploFacturacion {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // registrar una venta 
+        Venta NuevaVenta = new Venta();
+        /*
+        Persona unCliente = new Persona("Jose", "Feliz"); 
+        Persona unEmpleado = new Persona("Martin", "Fierro");
+        */
+        /*Producto unProducto = new Producto();
+        unProducto.SetterDescrip("Fanta");
+        unProducto.SetterCant(3);
+        unProducto.SetterPrecio(35);
+        
+        Producto unProducto2 = new Producto();
+        unProducto2.SetterDescrip("Coca Cola");
+        unProducto2.SetterCant(3);
+        unProducto2.SetterPrecio(45);
+        
+        Producto unProducto3 = new Producto();
+        unProducto3.SetterDescrip("Sprite");
+        unProducto3.SetterCant(3);
+        unProducto3.SetterPrecio(40);
+        
+        Producto unProducto4 = new Producto();
+        unProducto4.SetterDescrip("Sprite");
+        unProducto4.SetterCant(3);
+        unProducto4.SetterPrecio(40);
+        */
+        
+        NuevaVenta.elCliente=Persona.RetornarPersonaRandom();
+        NuevaVenta.elEmpleado=Persona.RetornarPersonaRandom();
+        
+        /*
+        //NuevaVenta.productoVendido=unProducto;
+        NuevaVenta.ListadoProducto[0]=unProducto;
+        NuevaVenta.ListadoProducto[1]=unProducto2;
+        NuevaVenta.ListadoProducto[2]=unProducto3;
+        */
+        
+        NuevaVenta.CargarProductos(Producto.RetornarProductoRandom());
+        NuevaVenta.CargarProductos(Producto.RetornarProductoRandom());
+        //NuevaVenta.CargarProductos(unProducto3);
+        //NuevaVenta.CargarProductos(unProducto4);
+        NuevaVenta.MostrarVenta();
+    }
+    
+}
