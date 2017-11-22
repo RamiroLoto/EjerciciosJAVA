@@ -104,6 +104,7 @@ public class EjemploDeHerencia {
      * Metodo: -VenderArticulo recibe un articulo y una cantidad
      *         -MostrarArticulos muestra todos los articulos
      *         -MostrarVentas muestra las ventas.
+               -Comprar, recibe un articulo y una cantidad.
      */
 
 }
