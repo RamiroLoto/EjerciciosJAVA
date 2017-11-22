@@ -1,0 +1,109 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package documento;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+
+/**
+ *
+ * @author alumno
+ */
+public class EjemploDeHerencia {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        FacturaA mifactura = new FacturaA(66);
+        //mifactura.setterNumero(66);
+        mifactura.MostrarDatos();
+        
+        ArrayList<Persona> listadoPersonas = new ArrayList<Persona>();
+        
+        AlumnoEgresado unAluEg = new AlumnoEgresado();
+        listadoPersonas.add(unAluEg);
+        
+        Alumno unAlumno = new Alumno();
+        listadoPersonas.add(unAlumno);
+        
+        Persona unaPersona = new Persona();
+        listadoPersonas.add(unaPersona);
+        
+        //listadoPersonas.forEach(action);
+        
+        for (int i = 0; i < listadoPersonas.size(); i++) {
+            listadoPersonas.get(i).MostrarLosDatos();
+        }
+        
+        //preferible y mas sencillo:
+        for (Persona alguno : listadoPersonas) {
+            alguno.MostrarLosDatos();
+        }
+        
+        Iterator<Persona> iterador = listadoPersonas.iterator();
+        while(iterador.hasNext()){
+            Persona Nueva = iterador.next();
+            Nueva.MostrarLosDatos();
+        }
+        
+        
+        //no anda por ahora, falta el to...
+        System.out.println("listado" + listadoPersonas);
+        
+        // de string
+        ArrayList<String> listadoPalabras = new ArrayList<String>();
+
+        listadoPalabras.add("primera");
+        listadoPalabras.add("segunda");
+        listadoPalabras.add("tercera");
+
+        System.out.println("listado" + listadoPalabras);
+        //listado.add(mifactura);
+
+        FacturaA PrimeraFactura = new FacturaA(50);
+        FacturaB SegundaFactura = new FacturaB(80);
+        Remito PrimerRemito = new Remito(100);
+        
+        ArrayList<Documento> ListadoFacturas = new ArrayList<Documento>();
+        
+        ListadoFacturas.add(PrimeraFactura);
+        ListadoFacturas.add(SegundaFactura);
+        ListadoFacturas.add(PrimerRemito);
+        
+        for (Documento otro : ListadoFacturas) {
+            otro.MostrarDatosCompletos();
+        }
+    }
+    
+    /**
+     * TP: Se debe realizar el control de compra y venta de un local,
+     * la clase "articulo" debe tener los siguientes atributos:
+     * codigo, nombre, precio de costo, precio de venta, stock,
+     * ademas debe tener los getters de precioVenta y NombreYCodigo, 
+     * los setters de precioCosto y stock,
+     * Un constructor que reciba todos los atributos por parametro, 
+     * menos el precioVenta, que se calcula con un 25% de incremento sobre el precio de costo
+     * Metodos: -HayStock: bool (retorna booleano y es de instancia)
+     *          -SonIguales (recibe 2 articulos y retorna un booleano, es static, 
+     *           compara el nombre y el codigo, si son iguales retorna true, 
+     *           de lo contrario retorna false)
+     * Dos herencias: -articuloComestible, que tiene fecha de vencimiento
+     *                -articuloLiquido, que tiene litros
+     * Los dos reciben estos atributos por parametro (constructor)
+     * Una Clase "venta", tiene un articulo vendido (del tipo articulo),
+     * una cantidad, que es int
+     * Un constructor que recibe dos parametros, articulo vendido y cantidad
+     * Metodo: -RetornarGanancia (Retorna una float)
+     * Una Clase "comercio", tiene un String "elDueño", un arrayList de articulos, 
+     * otro arrayList de ventas (necesitamos saber qué producto y qué cantidad)
+     * El constructor que recibe el nombre del dueño
+     * Metodo: -VenderArticulo recibe un articulo y una cantidad
+     *         -MostrarArticulos muestra todos los articulos
+     *         -MostrarVentas muestra las ventas.
+     */
+
+}
