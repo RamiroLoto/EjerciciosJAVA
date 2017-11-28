@@ -5,43 +5,57 @@
  */
 package controldecompra;
 
-import java.util.ArrayList;
 
 /**
  *
- * @author Rama
+ * @author alumno
  */
-public class Comercio {
-    
-    private String _elDueño;
-    
-    public Comercio(String nombre){
-        this._elDueño = nombre;
-    }
-    
-    ArrayList<Articulo> ListadoArticulos = new ArrayList<Articulo>();
-    
-    ArrayList<Venta> ListadoVentas = new ArrayList<Venta>();
-    
-    public void VenderArticulo(Articulo primero, Integer Cant){
+ public class ControlDeCompra {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        Articulo miarticulo;
+        miarticulo = new Articulo("fanta", 666, 100, 3);
+        System.out.println("Precio de venta: "+miarticulo.GetterPrecioVenta());
+        
+//        ArticuloComestible miarticulo2;
+//        Date nueva = new Date();
+//        miarticulo2 = new ArticuloComestible("alfajor", 9, 50, 2, nueva.toString());
+        
+        Comercio ElBolicheDeTony = new Comercio("Tony");
         
         
-    }
-    
-    public void MostrarArticulos(){
-        for (Articulo Nuevo : ListadoArticulos){
-            Nuevo.MostrarArticulo();
-        }
-    }
-    
-    public void MostrarVentas(){
-        for (Venta Nueva : ListadoVentas){
-            Nueva.MostrarVenta();
-        }
-    }
-    
-    public void Comprar (Articulo primero, Integer Cant){
+        Articulo miarticulo2;
+        miarticulo2 = new Articulo("Sprite", 555, 80, 5);
         
+        Articulo miarticulo3;
+        miarticulo3 = new Articulo("fanta", 666, 80, 28);
+        
+        String Respuesta;
+        /*
+        compra
+        */
+        Respuesta = ElBolicheDeTony.Comprar(miarticulo, 3);
+        System.out.println("respuesta: "+Respuesta);
+        
+        Respuesta = ElBolicheDeTony.Comprar(miarticulo2, 8);
+        System.out.println("respuesta: "+Respuesta);
+        
+        Respuesta = ElBolicheDeTony.Comprar(miarticulo3, 8);
+        System.out.println("respuesta: "+Respuesta);
+        
+        /*
+        venta
+        */
+        
+        Respuesta = ElBolicheDeTony.VenderArticulo(miarticulo, 10);
+        System.out.println("respuesta: "+Respuesta);
     }
     
 }
+
+
+
