@@ -7,10 +7,9 @@ package controldecompra;
 
 /**
  *
- * @author Rama
+ * @author alumno
  */
 public class Venta {
-    
     private Articulo _artVendido;
     private int _cantidad;
     
@@ -19,12 +18,14 @@ public class Venta {
         this._cantidad = Cant;
     }
     
-    public float RetornarGanancia(double Precio, Integer Cant){
-        float ganancia = (float)((Precio * Cant) * 0.25);
+    public float RetornarGanancia(){
+        float ganancia = this._artVendido.GetterGanancia()*this._cantidad;
         return ganancia;
     }
     
     public void MostrarVenta(){
-        System.out.println("El articulo vendido es: "+ this._artVendido);
+        System.out.println(""+ this._cantidad);
+        System.out.println("articulo ");
+        this._artVendido.MostrarArticulo();
     }
 }

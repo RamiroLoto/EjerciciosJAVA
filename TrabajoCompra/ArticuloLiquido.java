@@ -7,15 +7,16 @@ package controldecompra;
 
 /**
  *
- * @author Rama
+ * @author alumno
  */
 public class ArticuloLiquido extends Articulo {
     
-     public ArticuloLiquido (String nombre, int codigo, double precioCosto, int stock){
-        super(nombre, codigo, precioCosto, stock);
-    }
-    
     private int _CanLit;
+    
+    public ArticuloLiquido (String nombre, int codigo, float precioCosto, int stock, int litros){
+        super(nombre, codigo, precioCosto, stock);
+        this._CanLit = litros;
+    }
     
     public int SetCantidadLitros (int CanLit){
         this._CanLit = CanLit;

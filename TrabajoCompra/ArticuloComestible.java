@@ -5,20 +5,22 @@
  */
 package controldecompra;
 
+
 /**
  *
- * @author Rama
+ * @author alumno
  */
 public class ArticuloComestible extends Articulo {
     
-    public ArticuloComestible(String nombre, int codigo, double precioCosto, int stock){
+    private String _fecVen;
+    
+    public ArticuloComestible(String nombre, int codigo, float precioCosto, int stock, String Fecha){
         super(nombre, codigo, precioCosto, stock);
+        this._fecVen = Fecha;
     }
     
-    private int _FecVen;
-    
-    public int SetFechaVencimiento (int Fecha){
-        this._FecVen = Fecha;
+    public String SetFechaVencimiento (String Fecha){
+        this._fecVen = Fecha;
         return Fecha;
     }
 }
