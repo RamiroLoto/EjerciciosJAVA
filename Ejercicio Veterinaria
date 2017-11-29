@@ -1,0 +1,32 @@
+Se  necesita un sistema de administración de una veterinaria
+
+Clase Mascota
+	-Nombre String
+	-Raza String
+	-EstaBañado boolean
+-sexo string
++Constructor , que recibe por parámetros el nombre y la raza, EstaBañadp siempre se inicializa en false.	
+	+GetterNombre(): string
+	+bañar()cambia el estado de “EstaBañado” solo si está el false.
++ToString()
+Clase Perro
+	-Muerde boolean
+	-Tamaño ( chico, mediano, grande , gigante)
+	+Constructor que recibe todos los parámetros necesarios.
++ToString()
+Clase Gato 
+	-Araña boolean
++Constructor que recibe todos los parámetros necesarios.
++ToString()
+Clase Veterinaria
+	-Nombre
+	-Dueño
+	-ListadoDeMascotas
+-PrecioGato
+-PrecioPerro
++Constructor , recibe todo menos la lista que la inicializa en el constructor
++IngresarAnimal()
++MostrarTotalFacturado()
++ MostrarTotalFacturadoPorTipo(string tipo)
++toString()
++MostrarVeterinaria()
