@@ -1,0 +1,76 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package ejemploproductoconteiner;
+
+/**
+ *
+ * @author alumno
+ */
+public class EjemploProductoConteiner {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Producto uno = new Producto(1, "bicicleta", 2000);
+        ProductoNacional dos = new ProductoNacional(2, "mesa", 9000, "la pampa");
+        ProductoImportado tres = new ProductoImportado(3, "zapato", 7000, "china", 10);
+        ProductoNacional cuatro = new ProductoNacional(4, "silla", 8000, "cordoba");
+        ProductoImportado cinco = new ProductoImportado(5, "casco", 6000, "china", 20);
+        ProductoNacional seis = new ProductoNacional(6, "bolso", 5000, "misiones");
+        ProductoImportado siete = new ProductoImportado(7, "robot", 3000, "china", 30);
+
+        Producto a = new Producto(666, "dron", 20);
+        Producto b = a;
+        b._precio = 999;
+        //por tener la misma posicion de memoria no importa el orden a = 999 tambien
+        System.out.println("el precio de a es: "+a.GetterPrecio());
+        
+        Conteiner NuevoConteiner = new Conteiner(10);
+
+//        NuevoConteiner.CargarProducto(a);
+//        NuevoConteiner.CargarProducto(a);
+//        NuevoConteiner.CargarProducto(a);
+//        NuevoConteiner.CargarProducto(a);
+//        NuevoConteiner.CargarProducto(a);
+//        NuevoConteiner.CargarProducto(a);
+        
+        b._precio=333;
+        //al cambiar b cambian TODOS los de 'a'
+        
+        
+        if (NuevoConteiner.CargarProducto(uno)) {
+            System.out.println("exito");
+        } else {
+            System.out.println("No cargó");
+        }
+
+        if (NuevoConteiner.CargarProducto(dos)) {
+            System.out.println("exito");
+        } else {
+            System.out.println("No cargó");
+        }
+
+        if (NuevoConteiner.CargarProducto(tres)) {
+            System.out.println("exito");
+        } else {
+            System.out.println("No cargó");
+        }
+        
+        NuevoConteiner.CargarProducto(cuatro);
+        NuevoConteiner.CargarProducto(cinco);
+        NuevoConteiner.CargarProducto(seis);
+        NuevoConteiner.CargarProducto(siete);
+        
+        NuevoConteiner.Ordenar();
+        NuevoConteiner.MostrarConteiner();
+        
+        System.out.println(""+NuevoConteiner.toString());
+        System.out.println(""+uno.toString());
+        System.out.println(""+tres.toString());
+    }
+
+}
