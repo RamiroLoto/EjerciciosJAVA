@@ -5,13 +5,11 @@
  */
 package controldecompra;
 
-
 /**
  *
  * @author alumno
  */
 public class ArticuloComestible extends Articulo {
-    
     private String _fecVen;
     
     public ArticuloComestible(String nombre, int codigo, float precioCosto, int stock, String Fecha){

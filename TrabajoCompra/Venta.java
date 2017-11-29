@@ -24,8 +24,8 @@ public class Venta {
     }
     
     public void MostrarVenta(){
-        System.out.println(""+ this._cantidad);
-        System.out.println("articulo ");
+        System.out.println("La cantidad vendida fue: "+ this._cantidad);
+        System.out.println("y el articulo fue: ");
         this._artVendido.MostrarArticulo();
     }
 }

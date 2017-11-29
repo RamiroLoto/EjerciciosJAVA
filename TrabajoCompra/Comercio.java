@@ -52,7 +52,7 @@ public class Comercio {
             gananciaTotal += gananciaTotal + aux.RetornarGanancia();
             aux.MostrarVenta();
         }
-        System.out.println("ganancia" + gananciaTotal);
+        System.out.println("La ganancia es: " + gananciaTotal);
     }
 
     public String Comprar(Articulo primero, int Cant) {

@@ -10,7 +10,6 @@ package controldecompra;
  * @author alumno
  */
 public class ArticuloLiquido extends Articulo {
-    
     private int _CanLit;
     
     public ArticuloLiquido (String nombre, int codigo, float precioCosto, int stock, int litros){

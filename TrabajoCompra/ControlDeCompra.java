@@ -5,7 +5,6 @@
  */
 package controldecompra;
 
-
 /**
  *
  * @author alumno
@@ -53,6 +52,9 @@ public class ControlDeCompra {
         
         Respuesta = ElBolicheDeTony.VenderArticulo(miarticulo, 10);
         System.out.println("respuesta: "+Respuesta);
+        
+        ElBolicheDeTony.MostrarArticulos();
+        ElBolicheDeTony.MostrarVentas();
     }
     
 }
