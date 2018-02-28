@@ -1,0 +1,234 @@
+package clases;
+
+import java.util.Scanner;
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+/**
+ *
+ * @author alumno
+ */
+public class ejemplos {
+
+    /**
+     * ejemplo de ingreso de datos.
+     */
+    public static void IngresoDeDatos() {
+        Integer numeroUno;
+        Integer numeroDos;
+        Integer resultado;
+        String aux;
+
+        Scanner misc = new Scanner(System.in);
+
+        System.out.println("Ingrese primer numero");
+        aux = misc.next();
+        numeroUno = Integer.parseInt(aux);
+
+        System.out.println("Ingrese segundo numero");
+        aux = misc.next();
+        numeroDos = Integer.parseInt(aux);
+
+        resultado = numeroUno + numeroDos;
+
+        System.out.println("La suma de los dos numeros es: " + resultado);
+
+    }//Fin ingreso de datos.
+
+    /**
+     * instruccion if forma correcta de mostrar mayor.
+     */
+    public static void MostrarMayor() {
+        Integer numeroUno;
+        Integer numeroDos;
+
+        String aux;
+
+        Scanner misc = new Scanner(System.in);
+
+        System.out.println("Ingrese primer numero");
+        aux = misc.next();
+        numeroUno = Integer.parseInt(aux);
+
+        System.out.println("Ingrese segundo numero");
+        aux = misc.next();
+        numeroDos = Integer.parseInt(aux);
+
+        if (numeroUno > numeroDos) {
+            System.out.println("el numero " + numeroUno + " es el mayor");
+        } else {
+            if (numeroDos > numeroUno) {
+                System.out.println("el numero " + numeroDos + " es el mayor");
+            } else {
+                System.out.println("Los numeros son el mismo numero: " + numeroDos);
+            }
+        }
+    }//fin de mostrar mayor
+
+    /**
+     * saludar
+     */
+    public static void Saludar() {
+        System.out.println("Hola mundo");
+    }//fin de saludar
+
+    /**
+     * muestra la cantidad de dias que tiene el mes.
+     */
+    public static void UsoDelSwitch() {
+        String mes;
+        Scanner misc = new Scanner(System.in);
+        System.out.println("Ingrese el mes");
+        mes = misc.next();
+        mes = mes.toLowerCase();
+
+        switch (mes) {
+            case "enero":
+            case "marzo":
+            case "mayo":
+            case "julio":
+            case "agosto":
+            case "octubre":
+            case "diciembre":
+                System.out.println("El mes tiene 31 dias");
+                break;
+            case "febrero":
+                System.out.println("El mes tiene 28 dias");
+                break;
+            default:
+                System.out.println("El mes tiene 30 dias");
+        }
+
+    }
+
+    /**
+     * Switch + If
+     */
+    public static void UsoDelSwitchMasIf() {
+        /*
+        se pide el ingreso de un dia de la semana y una edad 
+            de ser dia del fin de semana y tener menos de 13 años 
+            mostrar el mensaje "a descansar"
+        si es dia de la semana y la misma edad el mensaje "a estudiar"
+        si la edad supera los 18 años el mensaje es "a trabajar"
+        si la edad está entre los 15 y los 30 "a festejar", solo si es fin de semana
+         */
+
+        Scanner misc = new Scanner(System.in);
+        Integer edad;
+        String aux;
+        String dia;
+
+        System.out.println("Ingrese dia");
+        aux = misc.next();
+        edad = Integer.parseInt(aux);
+
+        System.out.println("Ingrese mes");
+        dia = misc.next();
+        dia = dia.toLowerCase();
+
+        switch (dia) {
+            case "sabado":
+            case "domingo":
+                if (edad < 13) {
+                    System.out.println("a descansar");
+                }
+                if (edad > 15 && edad < 30) {
+                    System.out.println("a festejar");
+                }
+                break;
+            default:
+                if (edad < 13) {
+                    System.out.println("a estudiar");
+                }
+                if (edad > 18) {
+                    System.out.println("a trabajar");
+                }
+        }
+    }
+
+    public static void UsoDelWhileAsc() {
+        Integer contador;
+        contador = 0;
+        while (contador < 10) {
+            contador++;
+            System.out.println("es la iteracion " + contador);
+        }
+    }
+
+    public static void UsoDelWhileDes() {
+        Integer contador;
+        contador = 10;
+        while (contador > 0) {
+            System.out.println("es la iteracion " + contador);
+            contador--;
+        }
+        
+    }
+
+    public static void UsoDelWhileValidar(){
+        
+        Scanner misc = new Scanner(System.in);
+        Integer edad;//mayor a 0 y menor a 100
+        Integer sueldo;//mayor a 0
+        String sexo;//f o m 
+        String tipoAlumno;//C - cursante, L - libre, E - egresado.
+        Integer temperatura;//-200 y +200
+        String respuesta;//si o no
+        
+        System.out.println("ingrese sueldo");
+        sueldo = misc.nextInt();
+        while(sueldo<0){
+            System.out.println("error, reingrese");
+            sueldo=misc.nextInt();
+        }
+        
+        System.out.println("ingrese edad");
+        edad = misc.nextInt();
+        while(edad<0||edad>100){
+            System.out.println("error reingrese");
+            edad=misc.nextInt();
+        }
+        
+        System.out.println("ingrese sexo");
+        sexo = misc.next();
+        sexo = sexo.toLowerCase();
+        while(!sexo.equals("m")&&!sexo.equals("f")){
+            System.out.println("error, reingrese sexo");
+            sexo = misc.next();
+            sexo = sexo.toLowerCase();
+        }
+        
+        System.out.println("ingrese temperatura");
+        temperatura = misc.nextInt();
+        while(temperatura<-200||temperatura>200){
+            System.out.println("error, reingrese temperatura");
+            temperatura=misc.nextInt();
+        }
+        
+        System.out.println("ingrese tipo de alumno");
+        tipoAlumno = misc.next();
+        tipoAlumno = tipoAlumno.toLowerCase();
+        
+        while(!tipoAlumno.equals("C")&&!tipoAlumno.equals("L")&&!tipoAlumno.equals("E")){
+            System.out.println("error, reingrese sexo");
+            tipoAlumno = misc.next();
+            tipoAlumno = tipoAlumno.toLowerCase();
+        }
+        
+        System.out.println("ingrese respuesta");
+        respuesta = misc.next();
+        respuesta = respuesta.toLowerCase();
+        while(!respuesta.equals("si")&&!respuesta.equals("no")){
+            System.out.println("error, reingrese respuesta");
+            respuesta = misc.next();
+            respuesta = respuesta.toLowerCase();
+        }
+    }
+    
+    
+    
+}
